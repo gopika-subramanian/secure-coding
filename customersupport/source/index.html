@@ -1,0 +1,120 @@
+<!--I hope you will like this chat bot-->       
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Chatbot" />
+    <meta name="description" content="A Chat Bot for developers." />
+    <meta name="author" content="AhsanParadise" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="img/icon.png" rel="icon" />
+    <title>Customer Support</title>
+    <!---Links-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body onload="myLoader()" style="margin: 0;">
+    <div id="loader">
+      <!--Preloader spinner-->
+      <div class="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
+    <div style="display: none;" id="myDiv" class="animate-bottom">
+      <!--Auto Type Starts-->
+      <h1 class="auto">
+        <a
+          href=""
+          class="typewrite"
+          data-period="2000"
+          data-type='[ "Hi, I am George.", "I am here to help you.", "I will help you with your queries.", "Talk with me and say Hello." ]'
+        >
+          <span class="wrap"></span>
+        </a>
+      </h1>
+      <!--Colorful font-->
+      <div class="up"><h1>Customer Support</h1></div>
+      <!--Button pop up-->
+      <button class="open-button" onclick="openForm()">Chat</button>
+
+      <div class="chat-popup" id="myForm">
+        <form class="form-container">
+          <label for="msg"><b>Message</b></label>
+          <textarea
+            placeholder="Type message... "
+            title="Press Enter & Backspace"
+            name="msg"
+            id="userBox"
+            type="text"
+            onkeydown="if (event.keyCode == 13) {talk()}"
+          ></textarea>
+          <div class="moon" id="chatLog">
+            <p class="kane"><i class="fa fa-refresh fa-spin"></i></p>
+          </div>
+
+          <button type="button" class="btn cancel" onclick="closeForm()">
+            Close
+          </button>
+        </form>
+      </div>
+     
+<script>
+know = {
+  Hello: "Hi, Sir. Good to see you.",
+  "What is your name?": "MOGA",
+  "Who are you?": "<b>I am a Chat Bot</b>",
+  Damm: "you bullshit.",
+  "Tell me something": "I can't do it.",
+  Lol: "Don't use this one. I'll kick your butt.",
+  Hi: "Hello World! Nice to meet you.",
+  XD: "You think yourself smarter than me.",
+  "I am a human":
+    "Human have emotions. It is hard to understand. But I have dream to buy a bike.",
+  "Thank you": "No need.",
+  "This is bs": "I will make you red.",
+};
+
+function talk() {
+  var user = document.getElementById("userBox").value;
+  document.getElementById("userBox").value = "";
+  document.getElementById("chatLog").innerHTML = user + "<br>";
+
+  if (user in know) {
+    document.getElementById("chatLog").innerHTML = know[user] + "<br>";
+  } else {
+           
+            var chat = document.getElementById("chatLog");
+            chat.innerHTML += "<p>" + user + "</p>";
+
+
+
+  }
+}</script>
+    <!--Js-->
+    <script src="app.js"></script>
+  </body>
+</html>
